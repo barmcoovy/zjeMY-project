@@ -1,0 +1,129 @@
+﻿<Window x:Class="zjeMY.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zjeMY"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1200">
+    <Window.Resources>
+        <Style x:Key="menuHeader" TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontFamily" Value="Brush Script MT"/>
+        </Style>
+        <Style x:Key="potrawyHeader" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="0 0 70 0"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="0 0 15 0"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="sumatxtBlock">
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button" x:Key="mainBtns">
+            <Setter Property="BorderThickness" Value="3px"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Height" Value="80"/> 
+            <Setter Property="Width" Value="180"/> 
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#2394FE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="menuHeader" Style="{StaticResource menuHeader}">Menu</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="potrawyHeader" Grid.Row="0" Style="{StaticResource potrawyHeader}">Potrawy</TextBlock>
+                <Label Grid.Row="1" Content="34 ZŁ"/>
+                <Button Grid.Row="1" Click="Pizza_Click">Pizza</Button>
+
+                <Label Grid.Row="2" Content="40 ZŁ"/>
+                <Button Grid.Row="2" Click="Burger_Click">Burger</Button>
+
+                <Label Grid.Row="3" Content="15 ZŁ"/>
+                <Button Grid.Row="3" Click="Barszcz_Click">Barszcz</Button>
+
+                <Label Grid.Row="4" Content="38 ZŁ"/>
+                <Button Grid.Row="4" Click="Spaghetti_Click">Spaghetti</Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="dodatkiHeader" Grid.Row="0" Style="{StaticResource potrawyHeader}">Dodatki</TextBlock>
+                <Label Grid.Row="1" Content="8 ZŁ"/>
+                <Button Grid.Row="1" Click="Cola_Click">Coca-Cola</Button>
+
+                <Label Grid.Row="2" Content="6 ZŁ"/>
+                <Button Grid.Row="2" Click="Woda_Click">Woda</Button>
+                
+
+                <Label Grid.Row="3" Content="8 ZŁ"/>
+                <Button Grid.Row="3" Click="Lipton_Click">Lipton</Button>
+
+                <Label Grid.Row="4" Content="8 ZŁ"/>
+                <Button Grid.Row="4" Click="Fanta_Click">Fanta</Button>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="SUMA" Grid.Row="0" x:Name="sumatxtBlock" Style="{StaticResource sumatxtBlock}" TextWrapping="Wrap"/>
+                <Button Grid.Row="1" Click="Zamow_Click" Background="Green" Style="{StaticResource mainBtns}" Content="ZAMÓW" />
+                <Button Grid.Row="2" Click="Reset_Click" Background="Red" Style="{StaticResource mainBtns}" Content="RESET" />
+                <RadioButton Grid.Row="3" x:Name="odbiorRadio" Content="Odbiór" IsChecked="True" Checked="odbiorRadio_Checked"/>
+                <RadioButton Grid.Row="4" x:Name="dostawaRadio" Content="Dostawa (+15,00 zł)" Checked="dostawaRadio_Checked"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
