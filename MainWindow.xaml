@@ -43,8 +43,8 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontFamily" Value="Calibri"/>
             <Setter Property="FontSize" Value="26"/>
-            <Setter Property="Height" Value="80"/> 
-            <Setter Property="Width" Value="180"/> 
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Width" Value="180"/>
         </Style>
         <Style TargetType="RadioButton">
             <Setter Property="FontFamily" Value="Calibri"/>
@@ -77,16 +77,16 @@
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="potrawyHeader" Grid.Row="0" Style="{StaticResource potrawyHeader}">Potrawy</TextBlock>
                 <Label Grid.Row="1" Content="34 ZŁ"/>
-                <Button Grid.Row="1" Click="Pizza_Click">Pizza</Button>
+                <Button x:Name="pizzaBtn" Grid.Row="1" Click="Pizza_Click">Pizza</Button>
 
                 <Label Grid.Row="2" Content="40 ZŁ"/>
-                <Button Grid.Row="2" Click="Burger_Click">Burger</Button>
+                <Button x:Name="burgerBtn" Grid.Row="2" Click="Burger_Click">Burger</Button>
 
                 <Label Grid.Row="3" Content="15 ZŁ"/>
-                <Button Grid.Row="3" Click="Barszcz_Click">Barszcz</Button>
+                <Button x:Name="barszczBtn" Grid.Row="3" Click="Barszcz_Click">Barszcz</Button>
 
                 <Label Grid.Row="4" Content="38 ZŁ"/>
-                <Button Grid.Row="4" Click="Spaghetti_Click">Spaghetti</Button>
+                <Button x:Name="spaghettiBtn" Grid.Row="4" Click="Spaghetti_Click">Spaghetti</Button>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -98,17 +98,17 @@
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="dodatkiHeader" Grid.Row="0" Style="{StaticResource potrawyHeader}">Dodatki</TextBlock>
                 <Label Grid.Row="1" Content="8 ZŁ"/>
-                <Button Grid.Row="1" Click="Cola_Click">Coca-Cola</Button>
+                <Button x:Name="colaBtn" Grid.Row="1" Click="Cola_Click">Coca-Cola</Button>
 
                 <Label Grid.Row="2" Content="6 ZŁ"/>
-                <Button Grid.Row="2" Click="Woda_Click">Woda</Button>
-                
+                <Button x:Name="wodaBtn" Grid.Row="2" Click="Woda_Click">Woda</Button>
+
 
                 <Label Grid.Row="3" Content="8 ZŁ"/>
-                <Button Grid.Row="3" Click="Lipton_Click">Lipton</Button>
+                <Button x:Name="liptonBtn" Grid.Row="3" Click="Lipton_Click">Lipton</Button>
 
                 <Label Grid.Row="4" Content="8 ZŁ"/>
-                <Button Grid.Row="4" Click="Fanta_Click">Fanta</Button>
+                <Button x:Name="fantaBtn" Grid.Row="4" Click="Fanta_Click">Fanta</Button>
             </Grid>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>

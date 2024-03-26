@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -66,19 +70,44 @@ namespace zjeMY
         }
         private void Zamow_Click(object sender, RoutedEventArgs e)
         {
-            if(cena == 0 || cena== kosztDostawy)
+            if (cena == 0 || cena == kosztDostawy)
             {
                 MessageBox.Show("Musisz dodać jakiś produkt do zamówienia");
             }
             else
             {
                 sumatxtBlock.Text = "Dziękujemy za złożenia zamówienia o wartości " + cena + " ZŁ";
+                pizzaBtn.IsEnabled = false;
+                burgerBtn.IsEnabled = false;
+                barszczBtn.IsEnabled = false;
+                spaghettiBtn.IsEnabled = false;
+                colaBtn.IsEnabled = false;
+                wodaBtn.IsEnabled = false;
+                fantaBtn.IsEnabled = false;
+                liptonBtn.IsEnabled = false;
+                odbiorRadio.IsEnabled = false;
+                dostawaRadio.IsEnabled = false;
             }
         }
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
             cena = 0;
             sumatxtBlock.Text = "Suma: " + cena + " ZŁ";
+            dostawaRadio.IsChecked = false;
+            odbiorRadio.IsChecked = true;
+
+            fantaBtn.IsEnabled = true;
+            pizzaBtn.IsEnabled = true;
+            burgerBtn.IsEnabled = true;
+            barszczBtn.IsEnabled = true;
+            spaghettiBtn.IsEnabled = true;
+            colaBtn.IsEnabled = true;
+            wodaBtn.IsEnabled = true;
+            fantaBtn.IsEnabled = true;
+            liptonBtn.IsEnabled = true;
+
+            odbiorRadio.IsEnabled = true;
+            dostawaRadio.IsEnabled = true;
         }
 
         private void dostawaRadio_Checked(object sender, RoutedEventArgs e)
@@ -90,7 +119,7 @@ namespace zjeMY
 
         private void odbiorRadio_Checked(object sender, RoutedEventArgs e)
         {
-            if(kosztDostawy == 15)
+            if (kosztDostawy == 15)
             {
                 cena -= kosztDostawy;
                 kosztDostawy = 0;
